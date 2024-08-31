@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>home</title>
+        <link data-th-href="@{'/css/output.css'}" rel="stylesheet">
+        <link href="https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.min.css" rel="stylesheet" />
+    </head>
+    <body>
+        <div class=" bg-grey-200 w-1/2  p-4 mx-auto">
+            <h1 data-th-text="${name}">Welcome to Home page</h1>
+            <p  class="text-2xl">YoutubeChannel : <span data-th-text="${youtubechannel}"></span></p>
+            <p>Github : <span th:text="${gitrepo}"></span></p>
+            <a th:href="${gitrepo}">Click here to open</a>
+            <h1>hello</h1>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor maxime ipsum consectetur quas illum
+                consequuntur tempora quod. Quas id cum facere illum delectus necessitatibus laborum assumenda porro, est
+                magni fuga placeat pariatur quos illo ut molestias quasi sint reiciendis qui exercitationem rem dolores
+                corporis! Laudantium voluptas harum earum fugit tempora!
+            </p>
+        </div>
+        
+        <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.min.js"></script>
+    </body>
+</html>
+<!-- 
+th:text - 
+data-th-href - html friendly -->

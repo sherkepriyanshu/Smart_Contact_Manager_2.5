@@ -11,4 +11,4 @@ public class Application {
 		System.out.println("Application Startted spring boot");
 	}
 
-}
+}                       

@@ -1,24 +1,35 @@
-<!-- <div  class="parnet1 fragment" th:fragment="parent1(x,y)">
+<!DOCTYPE html>
+<html lang="en" class="light" th:fragment="parent(content,title,script)" xmlns:th="https://www.thymeleaf.org">
 
-    <h1>THis is parent fragment</h1>
-    <h1> this is <span th:text="${x}"></span></h1>
-    <h1> this is <span th:text="${y}"></span></h1>
- 
-</div> -->
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title data-th-replace="${title}">Base Page</title>
 
-<div  class="parnet fragment" th:fragment="parent(content)">
+    <link href="https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.min.css" rel="stylesheet" />
+</head>
 
-    <h1>THis is parent fragment</h1>
-  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat, quos.</p>
-  <div th:replace="${content}"></div>
- 
-</div>
+<body>
+    <!-- comman header -->
+    <div data-th-replace="~{navbar::navbar}"></div>
+
+    <!-- main content -->
+    <div class="p-4">
+        <section data-th-replace="${content}"></section>
+    </div>
+
+    <!-- flowbite content -->
+
+    <!-- comman footer -->
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.min.js"></script>
+    <script data-th-src ="@{'/js/script.js'}"></script>
+
+    <script data-th-replace="${script}">
+        console.log("Base Page");
+
+    </script>
 
 
-<div   th:fragment="test">
+</body>
 
-  <h1> this is testing fragment</h1>
- 
-</div>
-
-<!-- xmlns:th="https://www.thymeleaf.org" -->
+</html>
