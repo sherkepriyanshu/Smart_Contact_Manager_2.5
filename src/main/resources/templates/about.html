@@ -1,18 +1,23 @@
 <!DOCTYPE html>
-<html lang="en" th:replace="~{base :: parent(~{::#content},~{::#title},~{::#script})}">
+
+<html lang="en" th:replace="~{base :: parent(~{::#content},~{::title},~{::script})}">
+
 <head>
 
     <title id="title">About Page</title>
 </head>
-<body>
-   <div id="content">
-    <h1>Welcome to about page.</h1>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum, suscipit?</p>
-    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Excepturi numquam quibusdam dolore delectus? Sint, nulla!</p>
-   </div>
 
-   <script id="script">
-    console.log("about PAge");
-   </script>
+<body>
+    <div id="content">
+        <h1>Welcome to about page.</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum, suscipit?</p>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Excepturi numquam quibusdam dolore delectus? Sint,
+            nulla!</p>
+    </div>
+
+    <script id="script">
+        console.log("about PAge");
+    </script>
 </body>
-</html> 
+
+</html>

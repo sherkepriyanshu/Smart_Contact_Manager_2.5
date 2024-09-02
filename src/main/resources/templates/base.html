@@ -5,16 +5,20 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title data-th-replace="${title}">Base Page</title>
+    <!-- <link data-th-href="@{../static/css/output.css}" rel="stylesheet"> -->
+
+    
+    <link rel="stylesheet" data-th-href="@{'/css/output.css'}" />
 
     <link href="https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.min.css" rel="stylesheet" />
 </head>
 
-<body>
+<body class="dark:bg-grey-900 bg-grey-100 dark:text-white">
     <!-- comman header -->
     <div data-th-replace="~{navbar::navbar}"></div>
 
     <!-- main content -->
-    <div class="p-4">
+    <div class="p-5">
         <section data-th-replace="${content}"></section>
     </div>
 

@@ -1,13 +1,12 @@
 /** @type {import('tailwindcss').Config} */
-module.exports = {
+
+export default {
   content: ["./src/main/resources/**/*.{html,js}"],
   theme: {
     extend: {},
   },
   plugins: [],
-  darkMode:"selector",
-
+  darkMode: "selector",
 };
-
 
 

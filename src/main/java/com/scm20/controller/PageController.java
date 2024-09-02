@@ -2,7 +2,10 @@ package com.scm20.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
 
 @Controller
 public class PageController {
@@ -39,9 +42,15 @@ public class PageController {
 
     }
 
-    @RequestMapping("/register")
+    @GetMapping("/register")
     public String aboutPage() {
         System.out.println("about page loding");
         return "register";
     }
+
+    @GetMapping("/login")
+    public String login() {
+        return new String("login");
+    }
+    
 }
