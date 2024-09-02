@@ -1,9 +1,14 @@
 package com.scm20.entities;
 
 
+import java.util.*;
+
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -44,6 +49,10 @@ public class User {
     private String providerUserID;
 
 
-    
+    @OneToMany(mappedBy = "user" ,cascade = CascadeType.ALL,fetch = FetchType.LAZY,orphanRemoval = true) //cascadetype.all - if user get deleted all contact associated with the user get deleted
+     private List<Contact> contacts = new ArrayList<>();
+
+
+
 
 }
