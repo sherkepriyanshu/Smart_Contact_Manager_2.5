@@ -12,7 +12,6 @@ import lombok.ToString;
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString
-
 public class UserForm {
 
     private String name;

@@ -4,7 +4,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+// import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.scm20.forms.*;
@@ -47,21 +47,34 @@ public class PageController {
     public String login() {
         return new String("login");
     }
+
+
     @GetMapping("/register")
-    public String aboutPage() {
+    public String register(Model model) {
         System.out.println("about page loding");
 
         UserForm userForm = new UserForm();
-
+        //default data bhi dal skate hai
+        // userForm.setName("priyanshu");
+        model.addAttribute("userForm", userForm);
 
         return "register";
     }
 
    
 
-    @RequestMapping(path = "/do-register", method=RequestMethod.POST)
-    public String requestMethodName(@RequestParam String param) {
-        return new String();
+    @RequestMapping(value = "/do-register", method=RequestMethod.POST)
+    public String processRegister() {
+        System.out.println("Processing registration");
+
+        //fetch form data
+        //userform
+
+        //validate form data
+        //save to database
+        //message ="Registration succesful"
+        //redirect to login page
+        return "redirect:/register";
     } 
     
 }
