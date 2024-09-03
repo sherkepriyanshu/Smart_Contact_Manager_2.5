@@ -5,7 +5,9 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.scm20.forms.*;
 
 @Controller
 public class PageController {
@@ -41,16 +43,25 @@ public class PageController {
 
 
     }
-
-    @GetMapping("/register")
-    public String aboutPage() {
-        System.out.println("about page loding");
-        return "register";
-    }
-
     @GetMapping("/login")
     public String login() {
         return new String("login");
     }
+    @GetMapping("/register")
+    public String aboutPage() {
+        System.out.println("about page loding");
+
+        UserForm userForm = new UserForm();
+
+
+        return "register";
+    }
+
+   
+
+    @RequestMapping(path = "/do-register", method=RequestMethod.POST)
+    public String requestMethodName(@RequestParam String param) {
+        return new String();
+    } 
     
 }
