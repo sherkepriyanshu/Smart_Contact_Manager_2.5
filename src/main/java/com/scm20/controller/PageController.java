@@ -14,6 +14,8 @@ import com.scm20.forms.*;
 import com.scm20.services.UserServices;
 import com.scm20.services.impl.UserServiceImpl;
 
+import jakarta.servlet.http.HttpSession;
+
 @Controller
 public class PageController {
 
@@ -71,7 +73,7 @@ public class PageController {
    
 
     @RequestMapping(value = "/do-register", method=RequestMethod.POST)
-    public String processRegister(@ModelAttribute UserForm userForm) {
+    public String processRegister(@ModelAttribute UserForm userForm ,HttpSession session) {
         System.out.println("Processing registration");
 
         //fetch form data
@@ -82,17 +84,31 @@ public class PageController {
 
         //userservices
 
-        User user = User.builder()
-        .name(userForm.getName())
-        .email(userForm.getEmail())
-        .password(userForm.getPassword())
-        .phonenumber(userForm.getPhonenumber())
-        .about(userForm.getAbout())
-        .profilePic("not a image")
-        .build();
+        // User user = User.builder()
+        // .name(userForm.getName())
+        // .email(userForm.getEmail())
+        // .password(userForm.getPassword())
+        // .phonenumber(userForm.getPhonenumber())
+        // .about(userForm.getAbout())
+        // .profilePic("not a image")
+        // .build();
+
+        User user = new User();
+        user.setName(userForm.getName());
+
+        user.setEmail(userForm.getEmail());
+        user.setPassword(userForm.getPassword());
+        user.setPhonenumber(userForm.getPhonenumber());
+        user.setAbout(userForm.getAbout());
+        user.setProfilePic("not a image");
         User saveUser = userService.saveUser(user);
         System.out.println("user saved");
         //message ="Registration succesful"
+
+        
+        //add the message
+        session.setAttribute("message","registration succesful");
+
         //redirect to login page
         return "redirect:/register";
     } 
