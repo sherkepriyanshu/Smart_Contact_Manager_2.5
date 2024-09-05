@@ -5,7 +5,6 @@ import org.springframework.stereotype.Repository;
 
 import com.scm20.entities.User;
 import java.util.*;
-import java.util.Optional;
 
 
 @Repository

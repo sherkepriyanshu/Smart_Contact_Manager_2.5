@@ -42,6 +42,7 @@ public class User {
     private String phonenumber;
 
     //information
+    
     private boolean enabled = false;
     private boolean emailVerified = false;
     private boolean phoneVerified = false;

@@ -101,6 +101,7 @@ public class PageController {
         user.setPhonenumber(userForm.getPhonenumber());
         user.setAbout(userForm.getAbout());
         user.setProfilePic("not a image");
+        
         User saveUser = userService.saveUser(user);
         System.out.println("user saved");
         //message ="Registration succesful"

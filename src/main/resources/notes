@@ -1,3 +1,7 @@
-when we call /home  controller is working 
-controller is a class methods inside controller class is called as handler
-this handler is controlling this route and throwing the view
+// when we call /home  controller is working 
+// controller is a class methods inside controller class is called as handler
+// this handler is controlling this route and throwing the view
+
+
+// customfinder method inside repository anotated with 
+// @Repositry and extends JPARepository<Entity,TypeOFWntityID>

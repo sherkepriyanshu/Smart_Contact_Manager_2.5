@@ -1,40 +1,37 @@
 <!DOCTYPE html>
-<html lang="en" class="light" th:fragment="parent(content,title,script)" xmlns:th="https://www.thymeleaf.org">
+<html lang="en" class="light" th:fragment="parent(content,title,script)"
+    xmlns:th="https://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title data-th-replace="${title}">Base Page</title>
+        <!-- <link data-th-href="@{../static/css/output.css}" rel="stylesheet"> -->
 
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title data-th-replace="${title}">Base Page</title>
-    <!-- <link data-th-href="@{../static/css/output.css}" rel="stylesheet"> -->
+        <link rel="stylesheet" data-th-href="@{'/css/output.css'}" />
 
-    
-    <link rel="stylesheet" data-th-href="@{'/css/output.css'}" />
+        <link
+            href="https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.min.css"
+            rel="stylesheet" />
+    </head>
 
-    <link href="https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.min.css" rel="stylesheet" />
-</head>
+    <body class="dark:bg-ggitrey-900 bg-grey-100 dark:text-white">
+        <!-- comman header -->
+        <div data-th-replace="~{navbar::navbar}"></div>
 
-<body class="dark:bg-grey-900 bg-grey-100 dark:text-white">
-    <!-- comman header -->
-    <div data-th-replace="~{navbar::navbar}"></div>
+        <!-- main content -->
+        <div class="p-5">
+            <section data-th-replace="${content}"></section>
+        </div>
 
-    <!-- main content -->
-    <div class="p-5">
-        <section data-th-replace="${content}"></section>
-    </div>
+        <!-- flowbite content -->
 
-    <!-- flowbite content -->
+        <!-- comman footer -->
+        <script
+            src="https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.min.js"></script>
+        <script data-th-src="@{'/js/script.js'}"></script>
 
-    <!-- comman footer -->
-    <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.min.js"></script>
-    <script data-th-src="@{'/js/script.js'}"></script>
-
-    <script data-th-replace="${script}">
-        console.log("Base Page");
-
-
-    </script>
-
-
-</body>
-
+        <script data-th-replace="${script}">
+            console.log("Base Page");
+        </script>
+    </body>
 </html>
