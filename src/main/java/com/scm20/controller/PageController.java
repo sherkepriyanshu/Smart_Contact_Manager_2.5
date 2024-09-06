@@ -92,7 +92,7 @@ public class PageController {
         // .about(userForm.getAbout())
         // .profilePic("not a image")
         // .build();
-
+        // we are not using builder because the default value is not coming 
         User user = new User();
         user.setName(userForm.getName());
 
